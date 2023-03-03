@@ -44,8 +44,6 @@ string JoinMatrix(int[,] matrix)
   return result;
 }
 
-
-
 int[,] SwapLinesMatrix(int[,] matrix)
 {
   int columns = matrix.GetLength(1);
@@ -62,16 +60,16 @@ int[,] SwapLinesMatrix(int[,] matrix)
 }
 
 int lines = GetValueFromUser("Введите количество строк: ");
-int colums = GetValueFromUser("Введите количество столбцов: ");
-if (lines <= 0 || colums <= 0)
+int columns = GetValueFromUser("Введите количество столбцов: ");
+if (lines <= 0 || columns <= 0)
 {
   Console.WriteLine("Массив не является двумерным.");
   return;
 }
-int[,] matrix = new int[lines, colums];
+int[,] matrix = new int[lines, columns];
 
 FillMatrix(matrix);
-ShowMatrixGood(matrix);
+Console.WriteLine(JoinMatrix(matrix));
 int[,] result = SwapLinesMatrix(matrix);
 Console.WriteLine();
-ShowMatrixGood(result);
+Console.WriteLine(JoinMatrix(result));
