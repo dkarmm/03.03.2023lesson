@@ -12,7 +12,7 @@
   return value;
 }
 
-void FillMatrix(int[,] matrix, int min, int max)
+void FillMatrix(int[,] matrix, int min = 0, int max = 10)
 {
   int rows = matrix.GetLength(0);
   int columns = matrix.GetLength(1);
