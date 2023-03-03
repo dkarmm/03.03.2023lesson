@@ -1,8 +1,15 @@
-﻿int GetSizeFromUser(string messageForUser)
+﻿int GetValueFromUser(string messageForUser)
 {
-  Console.Write(messageForUser);
-  int size = Convert.ToInt32(Console.ReadLine());
-  return size;
+  int value = 0;
+  bool flag = false;
+
+  while (!flag)
+  {
+    Console.Write(messageForUser);
+    flag = int.TryParse(Console.ReadLine(), out value);
+  }
+
+  return value;
 }
 
 void FillMatrix(int[,] matrix)
@@ -46,8 +53,8 @@ int[,] SwapLinesMatrix(int[,] matrix)
   return matrix;
 }
 
-int lines = GetSizeFromUser("Введите количество строк: ");
-int colums = GetSizeFromUser("Введите количество столбцов: ");
+int lines = GetValueFromUser("Введите количество строк: ");
+int colums = GetValueFromUser("Введите количество столбцов: ");
 if (lines <= 0 || colums <= 0)
 {
   Console.WriteLine("Массив не является двумерным.");
