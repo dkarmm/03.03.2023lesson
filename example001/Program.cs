@@ -12,16 +12,18 @@
   return value;
 }
 
-void FillMatrix(int[,] matrix)
+void FillMatrix(int[,] matrix, int min, int max)
 {
-  for (int i = 0; i < matrix.GetLength(0); i++)
+  int rows = matrix.GetLength(0);
+  int columns = matrix.GetLength(1);
+
+  for (int i = 0; i < rows; i++)
   {
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    for (int j = 0; j < columns; j++)
     {
-      matrix[i, j] = new Random().Next(1, 10);
+      matrix[i, j] = new Random().Next(min, max);
     }
   }
-
 }
 
 void ShowMatrix(int[,] matrix)
