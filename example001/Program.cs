@@ -26,7 +26,7 @@ void FillMatrix(int[,] matrix, int min, int max)
   }
 }
 
-void ShowMatrix(int[,] matrix)
+void ShowMatrixBad(int[,] matrix)
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
@@ -65,7 +65,7 @@ if (lines <= 0 || colums <= 0)
 int[,] matrix = new int[lines, colums];
 
 FillMatrix(matrix);
-ShowMatrix(matrix);
+ShowMatrixBad(matrix);
 int[,] result = SwapLinesMatrix(matrix);
 Console.WriteLine();
-ShowMatrix(result);
+ShowMatrixBad(result);
