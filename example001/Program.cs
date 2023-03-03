@@ -26,16 +26,22 @@ void FillMatrix(int[,] matrix, int min, int max)
   }
 }
 
-void ShowMatrixBad(int[,] matrix)
+string JoinMatrix(int[,] matrix)
 {
-  for (int i = 0; i < matrix.GetLength(0); i++)
+  int rows = matrix.GetLength(0);
+  int columns = matrix.GetLength(1);
+
+  string result = String.Empty; // ""
+  for (int i = 0; i < rows; i++)
   {
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    for (int j = 0; j < columns; j++)
     {
-      Console.Write($"{matrix[i, j]} ");
+      result += $"{matrix[i, j],4} ";
     }
-    Console.WriteLine();
+    result += "\n";
   }
+
+  return result;
 }
 
 
@@ -65,7 +71,7 @@ if (lines <= 0 || colums <= 0)
 int[,] matrix = new int[lines, colums];
 
 FillMatrix(matrix);
-ShowMatrixBad(matrix);
+ShowMatrixGood(matrix);
 int[,] result = SwapLinesMatrix(matrix);
 Console.WriteLine();
-ShowMatrixBad(result);
+ShowMatrixGood(result);
